@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ジェントリーカーズ｜高槻の中古軽トラ・商用車</title>
+<meta name="description" content="高槻の中古軽トラ・商用バン販売店。一人経営で経費をかけない分、支払総額で勝負。状態は動画で全部見せます。来店は予約優先。">
+<meta property="og:title" content="ジェントリーカーズ｜高槻の中古軽トラ・商用車">
+<meta property="og:description" content="一人でやってるから、安い。高槻の中古軽トラ専門。総額表示・現車は予約でじっくり。">
+<!-- ▼ アクセス解析（GA4）: [9] 測定IDを差し替え。未設定のままでも表示に影響なし -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Noto+Sans+JP:wght@400;500;700&family=Zen+Kaku+Gothic+New:wght@700;900&display=swap" rel="stylesheet">
+<style>
+  /* ================= tokens ================= */
+  :root{
+    --paper:#FBFAF6;   /* 紙 */
+    --ink:#1A1B1D;     /* 墨 */
+    --red:#C7261B;     /* 値札レッド */
+    --yellow:#F2C400;  /* 現場イエロー */
+    --steel:#5F656B;   /* 鉄 */
+    --band:#F1EFE8;    /* 帯 */
+    --disp:'Zen Kaku Gothic New','Noto Sans JP','Hiragino Kaku Gothic ProN','Yu Gothic',sans-serif;
+    --body:'Noto Sans JP','Hiragino Kaku Gothic ProN','Yu Gothic',sans-serif;
+    --num:'Anton','Noto Sans JP',sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    *,*::before,*::after{transition:none!important;animation:none!important}
+  }
+  body{
+    font-family:var(--body);color:var(--ink);background:var(--paper);
+    line-height:1.75;font-size:15.5px;
+    padding-bottom:76px; /* sticky bar分 */
+  }
+  a{color:inherit}
+  :focus-visible{outline:3px solid var(--red);outline-offset:2px}
+  img{max-width:100%;display:block}
+  .wrap{max-width:720px;margin:0 auto;padding:0 18px}
+  section{padding:44px 0}
+
+  /* ================= header ================= */
+  .top{
+    background:var(--ink);color:var(--paper);
+    font-size:12.5px;letter-spacing:.06em;
+  }
+  .top .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:9px;padding-bottom:9px}
+  .top strong{font-family:var(--disp);font-weight:900;font-size:15px;letter-spacing:.04em}
+  .top a{color:var(--yellow);text-decoration:none;font-weight:700}
+
+  /* ================= hero ================= */
+  .hero{padding:52px 0 46px;overflow:hidden}
+  .eyebrow{
+    display:inline-block;background:var(--ink);color:var(--paper);
+    font-size:12px;font-weight:700;letter-spacing:.14em;padding:4px 10px;margin-bottom:18px;
+  }
+  .hero h1{
+    font-family:var(--disp);font-weight:900;
+    font-size:clamp(30px,8.4vw,46px);line-height:1.32;letter-spacing:.01em;
+  }
+  .hero h1 .red{color:var(--red)}
+  .hero .lede{margin-top:14px;color:var(--steel);font-size:14.5px;max-width:34em}
+
+  /* --- 看板プライスボード（このページの顔） --- */
+  .board{
+    position:relative;margin:30px auto 8px;max-width:420px;
+    background:#fff;border:3px solid var(--ink);
+    transform:rotate(-1.4deg);
+    box-shadow:6px 8px 0 rgba(26,27,29,.14);
+    padding:18px 20px 16px;
+  }
+  .board::before,.board::after{ /* テープ */
+    content:"";position:absolute;width:86px;height:26px;
+    background:rgba(242,196,0,.62);top:-14px;
+  }
+  .board::before{left:-24px;transform:rotate(-32deg)}
+  .board::after{right:-24px;transform:rotate(30deg)}
+  .board .car{font-family:var(--disp);font-weight:900;font-size:18px;letter-spacing:.03em}
+  .board .spec{font-size:12.5px;color:var(--steel);margin-top:2px}
+  .board .pricerow{display:flex;align-items:baseline;gap:10px;margin-top:8px;border-top:2px solid var(--ink);padding-top:10px}
+  .board .lbl{font-size:12px;font-weight:700;background:var(--red);color:#fff;padding:2px 8px;letter-spacing:.1em;white-space:nowrap}
+  .board .yen{font-family:var(--num);font-size:56px;line-height:1;color:var(--red);letter-spacing:.02em}
+  .board .unit{font-family:var(--disp);font-weight:900;font-size:20px;color:var(--red)}
+  .board .note{font-size:11.5px;color:var(--steel);margin-top:8px}
+  .board-caption{font-size:11.5px;color:var(--steel);text-align:center;margin-bottom:26px}
+
+  /* CTA */
+  .cta-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+  .btn{
+    flex:1;min-width:150px;text-align:center;text-decoration:none;
+    font-family:var(--disp);font-weight:900;font-size:16.5px;letter-spacing:.05em;
+    padding:15px 12px;border:3px solid var(--ink);
+    transition:transform .12s ease;
+  }
+  .btn:hover{transform:translateY(-2px)}
+  .btn-red{background:var(--red);border-color:var(--red);color:#fff}
+  .btn-ghost{background:#fff;color:var(--ink)}
+  .chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+  .chip{font-size:12px;font-weight:700;border:1.5px solid var(--ink);padding:3px 10px;background:#fff}
+
+  /* ================= 見出し共通 ================= */
+  h2{
+    font-family:var(--disp);font-weight:900;font-size:24px;letter-spacing:.02em;
+    display:flex;align-items:center;gap:12px;margin-bottom:22px;
+  }
+  h2::after{content:"";flex:1;height:3px;background:var(--ink)}
+  .sec-note{font-size:12.5px;color:var(--steel);margin:-14px 0 20px}
+
+  /* ================= 理由 ================= */
+  .band{background:var(--band)}
+  .reasons{display:grid;gap:14px}
+  @media(min-width:700px){.reasons{grid-template-columns:1fr 1fr 1fr}}
+  .reason{background:#fff;border:3px solid var(--ink);padding:18px 16px}
+  .reason .tag{
+    display:inline-block;background:var(--yellow);border:2px solid var(--ink);
+    font-family:var(--disp);font-weight:900;font-size:13px;padding:2px 10px;margin-bottom:10px;
+  }
+  .reason h3{font-family:var(--disp);font-weight:900;font-size:16.5px;line-height:1.5;margin-bottom:6px}
+  .reason p{font-size:13.5px;color:var(--steel)}
+
+  /* ================= 在庫 ================= */
+  .stock{display:grid;gap:16px}
+  @media(min-width:700px){.stock{grid-template-columns:1fr 1fr 1fr}}
+  .car-card{background:#fff;border:3px solid var(--ink);display:flex;flex-direction:column}
+  .car-card .head{background:var(--ink);color:var(--paper);font-family:var(--disp);font-weight:900;font-size:15.5px;padding:8px 12px;letter-spacing:.03em;display:flex;justify-content:space-between;align-items:center;gap:8px}
+  .car-card .no{font-family:var(--num);font-size:14px;color:var(--yellow);letter-spacing:.06em}
+  /* 車両写真：4:3で切り抜き。画像が無い場合は自動で「写真準備中」表示 */
+  .car-card .photo{position:relative;aspect-ratio:4/3;background:var(--band);border-bottom:3px solid var(--ink);overflow:hidden}
+  .car-card .photo img{width:100%;height:100%;object-fit:cover}
+  .car-card .photo.noimg::after{
+    content:"写真準備中";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+    font-family:var(--disp);font-weight:900;font-size:14px;color:var(--steel);
+  }
+  .car-card .body{flex:1}
+  .card-cta{
+    display:block;text-align:center;text-decoration:none;margin:0 14px 14px;
+    font-family:var(--disp);font-weight:900;font-size:14.5px;letter-spacing:.04em;
+    padding:11px 8px;background:var(--ink);color:var(--paper);
+  }
+  .car-card .body{padding:12px 14px 12px}
+  .car-card .spec{font-size:12.5px;color:var(--steel)}
+  .car-card .pricerow{display:flex;align-items:baseline;gap:8px;margin-top:8px}
+  .car-card .lbl{font-size:11px;font-weight:700;background:var(--red);color:#fff;padding:2px 7px;letter-spacing:.08em;white-space:nowrap}
+  .car-card .yen{font-family:var(--num);font-size:40px;line-height:1;color:var(--red)}
+  .car-card .unit{font-family:var(--disp);font-weight:900;font-size:16px;color:var(--red)}
+  .car-card .state{font-size:12px;margin-top:8px;border-top:2px dashed var(--band);padding-top:8px}
+  .stock-more{margin-top:20px;text-align:center}
+  .stock-more a{font-weight:700}
+
+  /* ================= 動画 ================= */
+  .video-ph{
+    border:3px solid var(--ink);background:#fff;padding:30px 18px;text-align:center;
+  }
+  .video-ph .mark{font-family:var(--disp);font-weight:900;font-size:20px}
+  .video-ph p{font-size:13px;color:var(--steel);margin-top:6px}
+
+  /* ================= クーポン ================= */
+  .benefit{background:var(--yellow);border:3px solid var(--ink);padding:22px 20px}
+  .benefit h3{font-family:var(--disp);font-weight:900;font-size:19px;margin-bottom:14px;text-align:center}
+  .benefit ol{list-style:none;display:grid;gap:10px}
+  .benefit li{display:flex;gap:10px;align-items:flex-start;font-size:14px;background:#fff;border:2px solid var(--ink);padding:10px 12px}
+  .benefit li b{font-family:var(--num);font-size:18px;color:var(--red);line-height:1.5}
+  .benefit .fine{font-size:11.5px;color:#5a4d00;margin-top:12px;text-align:center}
+
+  /* ================= 予約 ================= */
+  .steps{display:grid;gap:10px;margin-bottom:20px}
+  .step{display:flex;gap:12px;align-items:flex-start;background:#fff;border:2px solid var(--ink);padding:12px 14px}
+  .step b{font-family:var(--num);font-size:20px;color:var(--red);line-height:1.4}
+  .step p{font-size:13.5px}
+  .reserve-panel{border:3px solid var(--ink);background:#fff;padding:22px 18px;text-align:center}
+  .reserve-panel p{font-size:13.5px;color:var(--steel);margin-bottom:14px}
+  /* 予約フォームを用意したら .reserve-panel の中身をGoogleフォームのiframeに差し替え */
+
+  /* ================= アクセス ================= */
+  .access-grid{display:grid;gap:18px}
+  @media(min-width:700px){.access-grid{grid-template-columns:1fr 1fr}}
+  .access-table{width:100%;border-collapse:collapse;font-size:14px;background:#fff;border:3px solid var(--ink)}
+  .access-table th{white-space:nowrap;text-align:left;background:var(--band);padding:11px 12px;border-bottom:2px solid var(--band);font-family:var(--disp);font-weight:700;width:6.5em}
+  .access-table td{padding:11px 12px;border-bottom:2px solid var(--band)}
+  .access-table tr:last-child th,.access-table tr:last-child td{border-bottom:none}
+  .map-box{border:3px solid var(--ink);min-height:260px}
+  .map-box iframe{width:100%;height:100%;min-height:260px;border:0;display:block}
+
+  /* ================= footer ================= */
+  footer{background:var(--ink);color:#c9cbce;font-size:12px;padding:26px 0 30px}
+  footer .wrap{display:grid;gap:6px}
+  footer strong{color:var(--paper);font-family:var(--disp);font-weight:900;font-size:14px}
+
+  /* ================= sticky bar ================= */
+  .stickybar{
+    position:fixed;left:0;right:0;bottom:0;z-index:50;
+    background:var(--ink);padding:10px 12px calc(10px + env(safe-area-inset-bottom));
+    display:flex;gap:10px;justify-content:center;
+  }
+  .stickybar a{
+    flex:1;max-width:340px;text-align:center;text-decoration:none;
+    font-family:var(--disp);font-weight:900;font-size:15.5px;letter-spacing:.04em;
+    padding:12px 10px;border:2px solid transparent;
+  }
+  .sb-call{background:var(--yellow);color:var(--ink)}
+  .sb-reserve{background:var(--red);color:#fff}
+</style>
+</head>
+<body>
+
+<!--
+  ============================================================
+  公開前の差し替えチェックリスト
+  [1] 電話番号: 店の代表番号のままでOK（電話タップ数は[9]のGA4で自動計測）。
+      計測用050に切り替えたくなった場合のみ tel: を差し替え
+  [2] 在庫3台: 撮影のたびに実車のデータへ更新（車名・年式・走行・総額・ひとこと）
+  [3] カーセンサーの店舗在庫URL: 「全在庫を見る」リンクに設定
+  [4] TikTok: アカウント開設後、@ハンドルのリンクと動画埋め込みに差し替え
+  [5] 予約フォーム: Googleフォーム作成後、.reserve-panel をiframe埋め込みに差し替え
+      （回答は自動でスプレッドシート＝送客台帳になる）
+  [6] 営業時間・定休日: 店長に確認して記載
+  [7] 古物商許可番号: フッターに「大阪府公安委員会 第◯◯◯号」を記載（信頼性UP）
+  [8] 予約メリットの文言: 店長と合意した内容に調整
+  [9] アクセス解析: GA4で測定IDを取得し、<head>内の G-XXXXXXXXXX（2か所）を差し替え
+  [10] TikTokプロフィールに貼るURLは末尾に ?utm_source=tiktok を付ける
+       （TikTok経由の訪問数がGA4で正確に分かる）
+  [11] 車両写真: リポジトリに images/ フォルダを作り a-01.jpg のように置くだけ。
+       画像が無い車は自動で「写真準備中」表示になるので、崩れる心配はなし。
+       撮影は自分で（またはTikTok動画のスクショ）。ポータルサイト掲載写真の転載は不可。
+       横長（4:3）・幅1200px程度・500KB以下が目安。
+  [12] 車両ごとの予約ボタン: Googleフォームの「事前入力したURLを取得」で車両番号欄に
+       ダミー値を入れてURLを取得し、下部スクリプトの FORM_PREFILL_URL に設定。
+       ボタンを押すと車両番号が入った状態でフォームが開く（＝どの車を見て来たか自動で残る）。
+  ============================================================
+-->
+
+<div class="top">
+  <div class="wrap">
+    <strong>ジェントリーカーズ</strong>
+    <a href="tel:0726789000">☎ 072-678-9000</a><!-- [1] 電話タップはGA4で計測 -->
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">高槻｜中古の軽トラ・商用バン専門</span>
+    <h1>一人でやってるから、<br><span class="red">安い。</span></h1>
+    <p class="lede">従業員なし、広告費ほぼなし。かからなかった経費は、そのまま車両価格で返しています。表示はぜんぶ支払総額。よその見積もりと、そのまま見比べてください。</p>
+
+    <div class="board" role="img" aria-label="プライスボードの例。ミニキャブトラック、支払総額34.0万円">
+      <div class="car">ミニキャブトラック VX-SE</div>
+      <div class="spec">H19年式｜7.4万km｜車検整備付</div>
+      <div class="pricerow">
+        <span class="lbl">支払総額</span>
+        <span class="yen">34.0</span><span class="unit">万円</span>
+      </div>
+      <div class="note">※店頭納車の場合。追加費用なし。</div>
+    </div>
+    <p class="board-caption">↑ 例：実際に先日ご成約いただいた1台です</p>
+
+    <div class="cta-row">
+      <a class="btn btn-red" href="#reserve">来店を予約する</a>
+      <a class="btn btn-ghost" href="tel:0726789000">☎ 電話できく</a><!-- [1] -->
+    </div>
+    <div class="chips">
+      <span class="chip">支払総額で表示</span>
+      <span class="chip">現金一括OK</span>
+      <span class="chip">黒ナンバー（事業用）相談OK</span>
+    </div>
+  </div>
+</header>
+
+<section class="band">
+  <div class="wrap">
+    <h2>安さにはワケがあります</h2>
+    <div class="reasons">
+      <div class="reason">
+        <span class="tag">その1</span>
+        <h3>店長ひとり。<br>人件費ゼロ経営</h3>
+        <p>仕入れも整備手配も商談も店長ひとり。浮いた経費のぶんだけ、車両価格を下げられます。</p>
+      </div>
+      <div class="reason">
+        <span class="tag">その2</span>
+        <h3>状態は動画で<br>ぜんぶ見せる</h3>
+        <p>荷台のサビも、エンジン音も、隠さず撮って公開。良いところも悪いところも見てから来てください。</p>
+      </div>
+      <div class="reason">
+        <span class="tag">その3</span>
+        <h3>来店は予約制。<br>じっくり1組ずつ</h3>
+        <p>ひとりで回している店なので、予約優先。そのかわり、下回りまで納得いくまで一緒に確認できます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>今週のおすすめ在庫</h2>
+    <p class="sec-note">車両番号（No.）でお問い合わせいただくとスムーズです。写真は現車を撮影したものです。</p>
+    <!-- [2][11] 撮影のたびに写真（images/）と車両情報を更新。No.はこのサイト専用の通し番号 -->
+    <div class="stock">
+      <div class="car-card">
+        <div class="head"><span>キャリイ（例）</span><span class="no">No.A-01</span></div>
+        <div class="photo"><img src="images/a-01.jpg" alt="キャリイの外観" loading="lazy"
+          onerror="this.remove();this.parentNode.classList.add('noimg')"></div><!-- [11] -->
+        <div class="body">
+          <div class="spec">H26年式｜4.4万km｜5MT</div>
+          <div class="pricerow"><span class="lbl">支払総額</span><span class="yen">37.9</span><span class="unit">万円</span></div>
+          <div class="state">荷台に使用相応のサビあり。動画で公開中。</div>
+        </div>
+        <a class="card-cta" href="#reserve" data-car="A-01">この車の来店予約</a><!-- [12] -->
+      </div>
+      <div class="car-card">
+        <div class="head"><span>ハイゼットトラック（例）</span><span class="no">No.A-02</span></div>
+        <div class="photo"><img src="images/a-02.jpg" alt="ハイゼットトラックの外観" loading="lazy"
+          onerror="this.remove();this.parentNode.classList.add('noimg')"></div><!-- [11] -->
+        <div class="body">
+          <div class="spec">H22年式｜4.1万km｜AT</div>
+          <div class="pricerow"><span class="lbl">支払総額</span><span class="yen">49.8</span><span class="unit">万円</span></div>
+          <div class="state">AT希望の方に。内外装ともキレイな1台。</div>
+        </div>
+        <a class="card-cta" href="#reserve" data-car="A-02">この車の来店予約</a><!-- [12] -->
+      </div>
+      <div class="car-card">
+        <div class="head"><span>アクティトラック（例）</span><span class="no">No.A-03</span></div>
+        <div class="photo"><img src="images/a-03.jpg" alt="アクティトラックの外観" loading="lazy"
+          onerror="this.remove();this.parentNode.classList.add('noimg')"></div><!-- [11] -->
+        <div class="body">
+          <div class="spec">H24年式｜5.8万km｜5MT</div>
+          <div class="pricerow"><span class="lbl">支払総額</span><span class="yen">42.0</span><span class="unit">万円</span></div>
+          <div class="state">農作業・現場用に人気のMR軽トラ。</div>
+        </div>
+        <a class="card-cta" href="#reserve" data-car="A-03">この車の来店予約</a><!-- [12] -->
+      </div>
+    </div>
+    <p class="stock-more">在庫は入れ替わります → <a href="#">カーセンサーで全在庫を見る</a><!-- [3] 店舗在庫URLに差し替え --></p>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <h2>売り物を、動画で正直に</h2>
+    <div class="video-ph">
+      <div class="mark">▶ TikTokで在庫を毎日紹介中</div>
+      <p>下回り・荷台・エンジン始動音まで、1台ずつ撮って出しています。</p>
+      <p><a href="#">@（アカウント開設後にリンク）</a></p><!-- [4] -->
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>予約してから来てください</h2>
+    <div class="benefit">
+      <h3>店長ひとりの店なので、予約が確実です</h3>
+      <ol><!-- [8] 内容は店長と合意したものに調整 -->
+        <li><b>1</b><span>仕入れや納車で店を空けることがあります。予約なら店長が確実に在店しています。</span></li>
+        <li><b>2</b><span>見たい車を事前に出しておくので、着いてすぐ現車を確認できます。</span></li>
+        <li><b>3</b><span>下回り・荷台など、気になる箇所を一緒にじっくり確認できます。</span></li>
+      </ol>
+      <div class="fine">予約は無料・キャンセルもご連絡いただければ大丈夫です。</div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="reserve">
+  <div class="wrap">
+    <h2>来店までの流れ</h2>
+    <div class="steps">
+      <div class="step"><b>1</b><p>気になる車を見つける（TikTok・カーセンサー・このページ）</p></div>
+      <div class="step"><b>2</b><p>フォームか電話で来店予約。気になる車の<b>No.</b>を伝えるとスムーズです</p></div>
+      <div class="step"><b>3</b><p>現車を一緒に確認。下回りもエンジンも、納得いくまでどうぞ</p></div>
+    </div>
+    <div class="reserve-panel">
+      <p>予約フォームは準備中です。それまでは電話でどうぞ。<br>店長ひとりのため、出られない時は折り返します。</p>
+      <a class="btn btn-red" href="tel:0726789000" style="display:inline-block;min-width:220px">☎ 072-678-9000</a><!-- [1][5] -->
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>店舗・アクセス</h2>
+    <div class="access-grid">
+      <table class="access-table">
+        <tr><th>店名</th><td>ジェントリーカーズ</td></tr>
+        <tr><th>住所</th><td>〒569-0832<br>大阪府高槻市唐崎中4-13-13</td></tr>
+        <tr><th>電話</th><td><a href="tel:0726789000">072-678-9000</a></td></tr>
+        <tr><th>営業時間</th><td>来店は予約優先です。まずはお電話ください。</td></tr><!-- [6] -->
+        <tr><th>支払い</th><td>現金一括／各種ローン相談可</td></tr>
+      </table>
+      <div class="map-box">
+        <iframe title="ジェントリーカーズの地図" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://maps.google.com/maps?q=%E5%A4%A7%E9%98%AA%E5%BA%9C%E9%AB%98%E6%A7%BB%E5%B8%82%E5%94%90%E5%B4%8E%E4%B8%AD4-13-13&z=15&output=embed"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <strong>ジェントリーカーズ</strong>
+    <span>大阪府高槻市唐崎中4-13-13｜072-678-9000</span>
+    <span><!-- [7] 古物商許可番号をここに記載：大阪府公安委員会 第◯◯◯◯◯号 --></span>
+    <span>© Gentry Cars</span>
+  </div>
+</footer>
+
+<nav class="stickybar" aria-label="お問い合わせ">
+  <a class="sb-reserve" href="#reserve">来店を予約</a>
+  <a class="sb-call" href="tel:0726789000">☎ 電話する</a><!-- [1] -->
+</nav>
+
+<script>
+  // [12] Googleフォームの事前入力URL。entry.XXXXXXXXX= の後ろに車両番号が入る形にする。
+  // 例: "https://docs.google.com/forms/d/e/XXXX/viewform?usp=pp_url&entry.123456789="
+  var FORM_PREFILL_URL = "";
+
+  // 車両カードの「この車の来店予約」→ 車両番号付きでフォームを開く（未設定なら予約欄へスクロール）
+  document.querySelectorAll('.card-cta').forEach(function (btn) {
+    btn.addEventListener('click', function (e) {
+      var no = btn.getAttribute('data-car') || '';
+      if (FORM_PREFILL_URL) {
+        e.preventDefault();
+        window.open(FORM_PREFILL_URL + encodeURIComponent(no), '_blank', 'noopener');
+      }
+      if (typeof gtag === 'function') gtag('event', 'car_reserve_tap', { car_no: no });
+    });
+  });
+
+  // タップ計測: 電話・予約・在庫リンク（GA4イベントとして記録）
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest ? e.target.closest('a') : null;
+    if (!a || typeof gtag !== 'function') return;
+    var href = a.getAttribute('href') || '';
+    if (href.indexOf('tel:') === 0) gtag('event', 'tel_tap');
+    if (href === '#reserve') gtag('event', 'reserve_tap');
+    if (a.closest('.stock-more')) gtag('event', 'carsensor_tap');
+  });
+</script>
+</body>
+</html>

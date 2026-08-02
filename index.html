@@ -178,7 +178,8 @@
   .step p{font-size:13.5px}
   .reserve-panel{border:3px solid var(--ink);background:#fff;padding:22px 18px;text-align:center}
   .reserve-panel p{font-size:13.5px;color:var(--steel);margin-bottom:14px}
-  /* 予約フォームを用意したら .reserve-panel の中身をGoogleフォームのiframeに差し替え */
+  .reserve-panel iframe{max-width:100%;border:0}
+  /* Googleフォームをモバイル幅に収める */
 
   /* ================= アクセス ================= */
   .access-grid{display:grid;gap:18px}
@@ -376,8 +377,7 @@
       <div class="step"><b>3</b><p>現車を一緒に確認。下回りもエンジンも、納得いくまでどうぞ</p></div>
     </div>
     <div class="reserve-panel">
-      <p>予約フォームは準備中です。それまでは電話でどうぞ。<br>店長ひとりのため、出られない時は折り返します。</p>
-      <a class="btn btn-red" href="tel:0726789000" style="display:inline-block;min-width:220px">☎ 072-678-9000</a><!-- [1][5] -->
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdpEmRfF5dR6Bph5U9ZtIs3myETS0VLIdq9VgK37QSR8KOT8w/viewform?embedded=true" width="640" height="1351" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
     </div>
   </div>
 </section>
@@ -418,7 +418,7 @@
 <script>
   // [12] Googleフォームの事前入力URL。entry.XXXXXXXXX= の後ろに車両番号が入る形にする。
   // 例: "https://docs.google.com/forms/d/e/XXXX/viewform?usp=pp_url&entry.123456789="
-  var FORM_PREFILL_URL = "";
+  var FORM_PREFILL_URL = "https://docs.google.com/forms/d/e/1FAIpQLSdpEmRfF5dR6Bph5U9ZtIs3myETS0VLIdq9VgK37QSR8KOT8w/viewform?usp=pp_url&entry.173910724=";
 
   // 車両カードの「この車の来店予約」→ 車両番号付きでフォームを開く（未設定なら予約欄へスクロール）
   document.querySelectorAll('.card-cta').forEach(function (btn) {
